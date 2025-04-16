@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card">
+        <form (ngSubmit)="savePS()">
+            <h3>{{isEditMode ? 'Edit PS details' : 'Add PS details'}}</h3>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="field w-100" appearance="fill">
+                        <mat-label>Enter Police Station Code</mat-label>
+                        <input name="abc1" disabled [(ngModel)]="ps.ps_cd" matInput placeholder="Police Station Code">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="field w-100" appearance="fill">
+                        <mat-label>Enter Police Station Name</mat-label>
+                        <input name="abc2" [(ngModel)]="ps.ps_name" matInput placeholder="Police Station Name">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>State</mat-label>
+                        <mat-select name="abs" [(ngModel)]="ps.state_cd" (valueChange)="selectState($event)">
+                            <mat-option value="">Select</mat-option>
+                            <mat-option *ngFor="let state of states" [value]="state.state_cd">{{state.state_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>District</mat-label>
+                        <mat-select name="abc4" [(ngModel)]="ps.district_cd" (valueChange)="selectDistrict($event)">
+                            <mat-option value="">Select</mat-option>
+                            <mat-option *ngFor="let district of districts" [value]="district.district_cd">{{district.district_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Place</mat-label>
+                        <mat-select disableRipple name="abc5" [(ngModel)]="ps.place_of_ps">
+                            <mat-option value="">Select</mat-option>
+                            <mat-option *ngFor="let place of places" [value]="place.place_of_ps">{{place.place_of_ps}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Modified By</mat-label>
+                        <input [disabled]="disableM" name="modified_by" name="abc6" [(ngModel)]="ps.modified_by" matInput placeholder="Police Station Modified By">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-12 col-md-6">
+                    <mat-form-field class="w-100" appearance="fill">
+                        <mat-label>Instantiated By</mat-label>
+                        <input [disabled]="disableI" name="instantiated_by" name="abc8" [(ngModel)]="ps.instantiated_by" matInput placeholder="Police Station Instantiated By">
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-3">
+                <button class="btn btn-primary" type="submit">{{isEditMode ? 'Update' : 'Save'}}</button>
+            </div>
+        </form>
+    </div>
+</div>
