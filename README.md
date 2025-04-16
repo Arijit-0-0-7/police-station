@@ -1,6 +1,3 @@
-# demo
-
+# Practice1
 for Practice purpose..
 
-# demo2
- new..git
