@@ -1,0 +1,18 @@
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 240px;
+  position : fixed;
+  right : 20px;
+  bottom: 20px;
+}
+table {
+  width: 100%;
+}
+.aaa{
+  align-content: flex-end;
+}
+
+h2{
+  text-align: center;
+}
